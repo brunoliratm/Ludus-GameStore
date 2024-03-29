@@ -19,7 +19,6 @@ Ludus is not just a game store, it's a gateway to endless adventures and thrilli
 - Discover new releases and classics that will keep you entertained for hours.
 - Read detailed game descriptions and reviews to make informed decisions.
 - Create your own wishlist and keep track of your favorite games.
-- Participate in community discussions and share your gaming experiences.
 
 ### :open_file_folder:Get Started
 
