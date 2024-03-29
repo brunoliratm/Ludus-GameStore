@@ -11,7 +11,7 @@
 
 <div align="center" text-align="center">
   
-  [![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=800&size=27&pause=1000&color=A0153E&center=true&lines=Welcome+to+Ludus+GameStore!;)](https://git.io/typing-svg) 
+  [![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=800&size=24&pause=1000&color=A0153E&center=true&lines=Welcome+to+Ludus+GameStore!;)](https://git.io/typing-svg) 
   
 <h3>Ludus is not just a game store, it's a gateway to endless adventures and thrilling experiences. Whether you're a casual gamer or a hardcore enthusiast, Ludus has something for everyone.</h3>
 </div>
