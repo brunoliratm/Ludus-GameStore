@@ -4,6 +4,7 @@ import Tratamento.Limpeza;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+        Limpeza.limpar();
         System.out.print("B");
         Thread.sleep(150);
         System.out.print("e");
