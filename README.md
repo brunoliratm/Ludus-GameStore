@@ -26,8 +26,8 @@ Ludus is not just a game store, it's a gateway to endless adventures and thrilli
 To get started with Ludus, follow these simple steps:
 
 1. Clone this repository to your local machine.
-    ```shell
-git clone https://github.com/brunoliratm/Ludus-gemStore.git
+```shell
+   git clone https://github.com/brunoliratm/Ludus-gemStore.git
 ```
 2. Install the necessary dependencies.
 3. Launch the application and start exploring the world of gaming.
