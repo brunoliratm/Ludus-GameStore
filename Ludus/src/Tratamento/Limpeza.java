@@ -3,7 +3,7 @@ package Tratamento;
 import java.io.IOException;
 
 public class Limpeza {
-    public static void limpeza(){
+    public static void limpar(){
         String os = System.getProperty("os.name").toLowerCase();
 
         try {

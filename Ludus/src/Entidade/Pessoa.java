@@ -5,12 +5,14 @@ public abstract class Pessoa {
     private String endereco;
     private String telefone;
     private String email;
-    private String senha
+    private String idade;
+    private String senha;
 
-    public Pessoa(String nome, String endereco, String telefone, String email, String senha) {
+    public Pessoa(String nome, String endereco, String telefone, String email, String idade, String senha) {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
+        this.idade = idade;
         this.email = email;
     }
 
@@ -44,6 +46,14 @@ public abstract class Pessoa {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
     }
 
     public String getSenha() {
