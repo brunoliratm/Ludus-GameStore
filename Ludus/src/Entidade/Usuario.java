@@ -1,19 +1,19 @@
 package Entidade;
 
 public class Usuario extends Pessoa {
-    private String login;
+    private String CPF;
 
 
-    public Usuario(String nome, String endereco, String telefone, String email, String idade, String login, String senha) {
+    public Usuario(String CPF, String nome, String endereco, String telefone, String email, String idade, String senha) {
         super(nome, endereco, telefone, email, idade, senha);
-        this.login = login;
+        this.CPF = CPF;
     }
 
-    public String getLogin() {
-        return login;
+    public String getCPF() {
+        return CPF;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
     }
 }

@@ -46,10 +46,10 @@ public class Main {
         System.out.print("s\n");
         Thread.sleep(2000);
 
-        menuPrincipal();
+        menuInicial();
     }
 
-    public static void menuPrincipal() throws InterruptedException {
+    public static void menuInicial() throws InterruptedException {
         System.out.println("[1] Cadastrar Usuario");
         System.out.println("[2] Logar");
         System.out.println("[3] Sair\n");
@@ -69,13 +69,13 @@ public class Main {
                     break;
                 default:
                     Tratamentos.opcaoInvalida();
-                    menuPrincipal();
+                    menuInicial();
                     break;
             }
 
         } catch (Exception e) {
             Tratamentos.valorInvalido();
-            menuPrincipal();
+            menuInicial();
         }
     }
 }
