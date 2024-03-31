@@ -8,6 +8,7 @@ public class Main {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws InterruptedException {
         Limpeza.limpar();
+
         System.out.print("B");
         Thread.sleep(150);
         System.out.print("e");
@@ -51,24 +52,18 @@ public class Main {
     public static void menuPrincipal() throws InterruptedException {
         System.out.println("[1] Cadastrar Usuario");
         System.out.println("[2] Logar");
-        System.out.println("[4] Sair\n");
+        System.out.println("[3] Sair\n");
 
         try {
             int opcao = sc.nextInt();
             Limpeza.limpar();
             switch (opcao) {
                 case 1:
-
                     break;
                 case 2:
                     LoginUsuario.loginUsuario();
                     break;
                 case 3:
-                    Limpeza.limpar();
-                    System.out.println("Listando usuarios...");
-                    break;
-                case 4:
-                    Limpeza.limpar();
                     System.out.println("Saindo...");
                     System.exit(0);
                     break;

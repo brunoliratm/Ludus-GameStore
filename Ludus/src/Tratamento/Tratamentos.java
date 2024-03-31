@@ -1,13 +1,13 @@
 package Tratamento;
 
-public class Tratamentos {
+public class Tratamentos extends Exception{
     public static void contaInvalida() throws InterruptedException {
         System.out.println("Login ou senha incorretos!");
         Thread.sleep(2000);
     }
 
     public static void opcaoInvalida() throws InterruptedException {
-        System.out.println("Login ou senha incorretos!");
+        System.out.println("opção inválida!");
         Thread.sleep(2000);
     }
 
