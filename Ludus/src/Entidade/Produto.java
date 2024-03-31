@@ -7,6 +7,7 @@ public class Produto {
     private String plataforma;
     private int numeroJogadores;
     private boolean online;
+    public Object getNome;
 
     public Produto(String nome, String genero, int anoLancamento, String plataforma, int numeroJogadores, boolean online) {
         this.nome = nome;
@@ -57,7 +58,7 @@ public class Produto {
         this.numeroJogadores = numeroJogadores;
     }
 
-    public boolean getOnline() {
+    public boolean isOnline() {
         return online;
     }
 
