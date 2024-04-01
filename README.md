@@ -41,8 +41,7 @@
 ```shell
    git clone https://github.com/brunoliratm/Ludus-GameStore.git
 ```
-2. Install the necessary dependencies.
-3. Launch the application and start exploring the world of gaming.
+2. Launch the application and start exploring the world of gaming.
 </strong>
 
 </br>
