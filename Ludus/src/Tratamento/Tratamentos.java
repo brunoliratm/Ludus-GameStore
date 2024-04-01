@@ -1,6 +1,6 @@
 package Tratamento;
 
-public class Tratamentos extends Exception{
+public class Tratamentos {
     public static void contaInvalida() throws InterruptedException {
         System.out.println("Login ou senha incorretos! tente novamente.");
         Thread.sleep(2000);
