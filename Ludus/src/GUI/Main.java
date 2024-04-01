@@ -59,6 +59,7 @@ public class Main {
             Limpeza.limpar();
             switch (opcao) {
                 case 1:
+                    LoginUsuario.cadastrarUsuario();
                     break;
                 case 2:
                     LoginUsuario.loginUsuario();
