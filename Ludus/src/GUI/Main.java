@@ -10,46 +10,49 @@ public class Main {
         Limpeza.limpar();
 
         System.out.print("B");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("e");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("m");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("-");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("v");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("i");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("n");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("d");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("o");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print(" ");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("a");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("o");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print(" ");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("L");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("u");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("d");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("u");
-        Thread.sleep(150);
+        Thread.sleep(120);
         System.out.print("s\n");
-        Thread.sleep(1600);
+        Thread.sleep(2500);
 
         menuInicial();
     }
 
     public static void menuInicial() throws InterruptedException {
+        Limpeza.limpar();
+        System.out.println("Menu Inicial");
+        Thread.sleep(1000);
         System.out.println("\n[1] Cadastrar Usuario");
         System.out.println("[2] Logar");
         System.out.println("[3] Sair\n");
@@ -57,6 +60,7 @@ public class Main {
         try {
             System.out.print("--> ");
             int opcao = sc.nextInt();
+            Thread.sleep(500);
             Limpeza.limpar();
             switch (opcao) {
                 case 1:
@@ -67,9 +71,9 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Obrigado por usar nosso aplicativo ;)");
-                    Thread.sleep(1500);
+                    Thread.sleep(1200);
                     System.out.println("Saindo...");
-                    Thread.sleep(1500);
+                    Thread.sleep(1200);
                     System.exit(0);
                     break;
                 default:

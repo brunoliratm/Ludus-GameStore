@@ -29,7 +29,7 @@ public class LoginUsuario {
                     }
                 }
                 if (loginSuccess) {
-                    Main.menuInicial();
+                    MenuLudus.menuLudus();
                 } else {
                     Tratamentos.contaInvalida();
                     Main.menuInicial();

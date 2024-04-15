@@ -3,6 +3,7 @@ package Servico;
 import java.util.Scanner;
 import Entidade.Usuario;
 import GUI.Main;
+import GUI.MenuLudus;
 import Repositorio.RepositorioUsuario;
 import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
@@ -39,12 +40,12 @@ public class RegistroUsuario {
             RepositorioUsuario.addUsuario(usuario);
             System.out.println("Usuário cadastrado com sucesso!");
             Thread.sleep(2000);
-            Main.menuInicial();
+            MenuLudus.menuLudus();
         }
     }catch (Exception e) {
         input.nextLine();
         Tratamentos.valorInvalido();
-        cadastrarUsuario();
+        Main.menuInicial();
     }
 
 }
