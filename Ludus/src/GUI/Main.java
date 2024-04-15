@@ -44,41 +44,47 @@ public class Main {
         System.out.print("u");
         Thread.sleep(150);
         System.out.print("s\n");
-        Thread.sleep(2000);
+        Thread.sleep(1600);
 
         menuInicial();
     }
 
     public static void menuInicial() throws InterruptedException {
-        System.out.println("[1] Cadastrar Usuario");
+        System.out.println("\n[1] Cadastrar Usuario");
         System.out.println("[2] Logar");
         System.out.println("[3] Sair\n");
 
         try {
+            System.out.print("--> ");
             int opcao = sc.nextInt();
             Limpeza.limpar();
             switch (opcao) {
                 case 1:
-                    LoginUsuario.cadastrarUsuario();
+                    RegistroUsuario.cadastrarUsuario();
                     break;
                 case 2:
                     LoginUsuario.loginUsuario();
                     break;
                 case 3:
+                    System.out.println("Obrigado por usar nosso aplicativo ;)");
+                    Thread.sleep(1500);
                     System.out.println("Saindo...");
+                    Thread.sleep(1500);
                     System.exit(0);
                     break;
                 default:
+                    sc.nextLine();
                     Tratamentos.opcaoInvalida();
+                    Limpeza.limpar();
                     menuInicial();
                     break;
             }
 
         } catch (Exception e) {
+            sc.nextLine();
             Tratamentos.valorInvalido();
+            Limpeza.limpar();
             menuInicial();
         }
     }
 }
-
-

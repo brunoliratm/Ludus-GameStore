@@ -14,6 +14,7 @@ public abstract class Pessoa {
         this.telefone = telefone;
         this.idade = idade;
         this.email = email;
+        this.senha = senha;
     }
 
     public String getNome() {
