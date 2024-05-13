@@ -7,9 +7,11 @@ import Repositorio.RepositorioProduto;
 import Servico.Download;
 import Tratamento.Tratamentos;
 
+
+import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Interacao {
+public class MainLudus {
 
     public static void menuDeJogos(Usuario user) throws InterruptedException {
         RepositorioProduto repositorioProduto = new RepositorioProduto();
@@ -22,6 +24,9 @@ public class Interacao {
 
 
             while (loopPrincipal != 0) {
+                System.out.println("==== LUDUS GAME-STORE ====\n");
+                System.out.println("Bem-vindo(a) "+user.getNome()+"!");
+                System.out.println("Data: " + LocalDate.now());
                 System.out.println("[1] - Buscar por genero\n" +
                         "[2] - Buscar por nome\n" +
                         "[3] - Ver todos os jogos\n" +

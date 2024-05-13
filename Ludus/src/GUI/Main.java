@@ -1,4 +1,5 @@
 package GUI;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import Repositorio.RepositorioUsuario;
@@ -53,6 +54,7 @@ public class Main {
     }
 
     public static void menuInicial() throws InterruptedException {
+
         System.out.println("[1] Cadastrar Usuario");
         System.out.println("[2] Logar");
         System.out.println("[3] Sair\n");
@@ -86,5 +88,3 @@ public class Main {
         }
     }
 }
-
-

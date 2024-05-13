@@ -1,3 +1,4 @@
+
 package Servico;
 import Entidade.Usuario;
 import Repositorio.RepositorioUsuario;
@@ -9,9 +10,6 @@ import GUI.*;
 public class LoginUsuario {
     static Scanner input = new Scanner(System.in);
 
-    /**
-     * @throws InterruptedException
-     */
     public static void loginUsuario() throws InterruptedException {
         System.out.println("Login de Usuário\n");
         Limpeza.limpar();
@@ -37,7 +35,7 @@ public class LoginUsuario {
 
                 }
                 if (loginSuccess) {
-                    Interacao.menuDeJogos(u1);
+                    MainLudus.menuDeJogos(u1);
 
                     //Main.menuInicial();
                 } else {
