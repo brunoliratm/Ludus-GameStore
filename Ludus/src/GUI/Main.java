@@ -1,5 +1,7 @@
 package GUI;
 import java.util.Scanner;
+
+import Repositorio.RepositorioUsuario;
 import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
 import Servico.*;
@@ -7,6 +9,7 @@ import Servico.*;
 public class Main {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) throws InterruptedException {
+        
         Limpeza.limpar();
 
         System.out.print("B");
@@ -55,6 +58,7 @@ public class Main {
         System.out.println("[3] Sair\n");
 
         try {
+            RepositorioUsuario.cadastro();
             int opcao = sc.nextInt();
             Limpeza.limpar();
             switch (opcao) {
@@ -76,6 +80,8 @@ public class Main {
 
         } catch (Exception e) {
             Tratamentos.valorInvalido();
+            sc.nextInt();
+            System.out.println();
             menuInicial();
         }
     }

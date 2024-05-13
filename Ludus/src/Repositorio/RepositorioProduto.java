@@ -5,28 +5,62 @@ import Entidade.Produto;
 import java.util.ArrayList;
 
 public class RepositorioProduto {
-    ArrayList<Produto> repositorioJogos = new ArrayList<>();
+    static ArrayList<Produto> repositorioJogos = new ArrayList<>();
 
     public void addJogo(Produto jogo){
         repositorioJogos.add(jogo);
     }
+    public static boolean baixar(String nome){
+        for (int i =0;i<=repositorioJogos.size();i++){
+            if (repositorioJogos.get(i).getNome.equals(nome)){
+                System.out.println("instalando");
+                return true;
+            }
+        }
+        return false;
+    }
+    public void jogosAdicionados(){
+        repositorioJogos.add(new Produto("Grand Theft Auto V", "Ação e Aventura", 2013, "PlayStation 3, PlayStation 4, Xbox 360, Xbox One, PC", 1, true));
+        repositorioJogos.add(new Produto("Red Dead Redemption 2", "Ação e Aventura", 2018, "PlayStation 4, Xbox One, PC", 1, true));
+        repositorioJogos.add(new Produto("The Witcher 3: Wild Hunt", "RPG", 2015, "PC, PlayStation 4, Xbox One, Nintendo Switch", 1, true));
+        repositorioJogos.add(new Produto("God of War (2018)", "Ação e Aventura", 2018, "PlayStation 4", 1, true));
+        repositorioJogos.add(new Produto("Horizon Zero Dawn", "RPG de Ação", 2017, "PlayStation 4", 1, true));
+        repositorioJogos.add(new Produto("Bloodborne", "RPG de Ação", 2015, "PlayStation 4", 1, true));
+        repositorioJogos.add(new Produto("Uncharted 4: A Thief's End", "Ação e Aventura", 2016, "PlayStation 4", 1, true));
+        repositorioJogos.add(new Produto("Super Mario Odyssey", "Plataforma", 2017, "Nintendo Switch", 1, false));
+        repositorioJogos.add(new Produto("The Legend of Zelda: Breath of the Wild", "Aventura", 2017, "Nintendo Switch", 1, false));
+        repositorioJogos.add(new Produto("Uncharted 2: Among Thieves", "Ação e Aventura", 2009, "PlayStation 3", 1, false));
+    }
+    public void recomendacoes(){
+        System.out.println("Recomendações para você");
+        int indice = (int) (Math.random() * repositorioJogos.size());
+        Produto recomendacao = repositorioJogos.get(indice);
+        System.out.println(recomendacao);
+        indice = (int) (Math.random() * repositorioJogos.size());
+        recomendacao = repositorioJogos.get(indice);
+        System.out.println(recomendacao);
+        indice = (int) (Math.random() * repositorioJogos.size());
+        recomendacao = repositorioJogos.get(indice);
+        System.out.println(recomendacao);
+    }
 
-
-    public void verProdutoPorGenero(String genero){
+    public boolean verProdutoPorGenero(String genero){
 
         ArrayList<Produto> jogosFiltrados = new ArrayList<>();
-        for (Produto jogo : repositorioJogos) {
-            if (jogo.getGenero().equalsIgnoreCase(genero)) {
-                jogosFiltrados.add(jogo);
+        for (int i=0; i<=repositorioJogos.size(); i++) {
+            if (repositorioJogos.get(i).getGenero().startsWith(genero) || repositorioJogos.get(i).getGenero().equalsIgnoreCase(genero)) {
+                jogosFiltrados.add(repositorioJogos.get(i));
             }
         }
         if (jogosFiltrados.isEmpty()) {
             System.out.println("Nenhum jogo encontrado para o gênero " + genero);
+            return false;
         } else {
             System.out.println("Jogos do gênero " + genero + ":");
             for (Produto jogo : jogosFiltrados) {
                 System.out.println(" - " + jogo.getNome());
             }
+            return true;
         }
     }
 
@@ -47,22 +81,16 @@ public class RepositorioProduto {
         }
     }
 
-    public void verProdutoPorNome(String nome){
+    public Produto verProdutoPorNome(String nome){
 
-        ArrayList<Produto> jogosFiltrados = new ArrayList<>();
         for (Produto jogo : repositorioJogos) {
             if (jogo.getNome().equalsIgnoreCase(nome)) {
-                jogosFiltrados.add(jogo);
+                System.out.println(jogo);
+                return jogo;
             }
         }
-        if (jogosFiltrados.isEmpty()) {
-            System.out.println("Nenhum jogo encontrado com o nome '" + nome+"'");
-        } else {
-            System.out.println("Jogos com o nome '" + nome + "' :");
-            for (Produto jogo : jogosFiltrados) {
-                System.out.println("Jogo: "+jogo.getNome()+jogo.getAnoLancamento()+" genero: "+jogo.getGenero()+"\n"+"Plataforma: "+jogo.getPlataforma()+" Nº downloads: "+jogo.getNumeroJogadores()+" Online: "+jogo.isOnline());
-            }
-        }
+        System.out.println("Não foi encontrado nenhum jogo com esse nome "+ nome);
+       return null;
     }
 
 }

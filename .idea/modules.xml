@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Ludus.iml" filepath="$PROJECT_DIR$/Ludus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ludus-GameStore.iml" filepath="$PROJECT_DIR$/Ludus-GameStore.iml" />
     </modules>
   </component>
 </project>
