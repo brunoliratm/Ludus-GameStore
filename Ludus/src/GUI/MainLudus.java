@@ -17,8 +17,8 @@ public class MainLudus {
         RepositorioProduto repositorioProduto = new RepositorioProduto();
         Scanner input = new Scanner(System.in);
         repositorioProduto.jogosAdicionados();
-        int escolhaInt;
         String escolhaString;
+        int escolhaInt;
         int loopPrincipal =9;
         try {
 
