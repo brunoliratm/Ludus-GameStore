@@ -6,42 +6,41 @@ import Entidade.Usuario;
 
 public class RepositorioUsuario {
     public static ArrayList<Usuario> listaUsuarios= new ArrayList<>();
-    public ArrayList<Produto> listaMeusJogos = new ArrayList<>();
 
-
-public static void cadastro(){
-    listaUsuarios.add(new Usuario("12345678911","a","a","a","a","a","a"));
+    public static void cadastroADM(){
+        listaUsuarios.add(new Usuario("12345678900","ADM","null","null","null","null","ADM"));
 }
 
     public static  void addUsuario(Usuario usuario){
         listaUsuarios.add(usuario);
     }
 
-    public boolean checkUsuario(String cpf, String senha){
+    public static void checkUsuario(String cpf){
         
         for (Usuario usuario : listaUsuarios) {
-            if (usuario.getCPF().equals(cpf) && usuario.getSenha().equals(senha)) {
-                boolean acesso = true;
-                return acesso;
-    
+            if (usuario.getCPF().equals(cpf)) {
+                System.out.println(usuario);
+
+            }else {
+                System.out.println("Usuário não encontrado");
             }
         }
-        return false;
+
     }
     public static void mostrarUser(){
         for (Usuario usuario : listaUsuarios) {
             System.out.println(usuario.getCPF());
         }
     }
-    public void adicionarJogo(Produto p1){
-    this.listaMeusJogos.add(p1);
+    public static void excluirUsuario(String cpfUser){
+        for (Usuario user:listaUsuarios) {
+            if (user.getCPF().equals(cpfUser)){
+                listaUsuarios.remove(user);
+                System.out.println("Usuário removido");
+            }else {
+                System.out.println("Usário não encontrado");
+            }
+        }
     }
-    public void mostrarJogo(){
-    if(listaMeusJogos.isEmpty()){
-        System.out.println("Lista vazia, baixe um jogo para ver aqui");
-    }else {
-        System.out.println("Seus jogos");
-        System.out.println(listaMeusJogos);
-    }
-    }
+
 }

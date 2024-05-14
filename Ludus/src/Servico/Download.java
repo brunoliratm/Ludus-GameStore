@@ -12,9 +12,10 @@ public class Download {
                 System.out.println("Instalação iniciada");
                 System.out.println("");
                 for (int i = 0; i<=10; i++) {
+                    Limpeza.limpar();
                     System.out.println(i+"0%");
                     Thread.sleep(2000);
-                    Limpeza.limpar();
+
                 }
 
 

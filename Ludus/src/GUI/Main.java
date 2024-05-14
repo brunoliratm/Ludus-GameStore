@@ -1,5 +1,4 @@
 package GUI;
-import java.time.LocalDate;
 import java.util.Scanner;
 
 import Repositorio.RepositorioUsuario;
@@ -54,13 +53,13 @@ public class Main {
     }
 
     public static void menuInicial() throws InterruptedException {
-
-        System.out.println("[1] Cadastrar Usuario");
-        System.out.println("[2] Logar");
-        System.out.println("[3] Sair\n");
-
+        sc.reset();
         try {
-            RepositorioUsuario.cadastro();
+            System.out.println("[1] Cadastrar Usuario");
+            System.out.println("[2] Logar");
+            System.out.println("[3] Sair\n");
+
+            RepositorioUsuario.cadastroADM();
             int opcao = sc.nextInt();
             Limpeza.limpar();
             switch (opcao) {
@@ -82,8 +81,6 @@ public class Main {
 
         } catch (Exception e) {
             Tratamentos.valorInvalido();
-            sc.nextInt();
-            System.out.println();
             menuInicial();
         }
     }

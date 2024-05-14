@@ -68,14 +68,13 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "Jogo--" +
+        return "\nJogo--" +
                 "nome='" + nome + '\'' +
-                ", genero='" + genero + '\'' +
-                ", anoLancamento=" + anoLancamento +
-                ", plataforma='" + plataforma + '\'' +
-                ", numeroJogadores=" + numeroJogadores +
-                ", online=" + online +
-                ", getNome=" + getNome +
+                "| genero='" + genero + '\'' +
+                "| anoLancamento=" + anoLancamento +
+                "| plataforma=" + plataforma + '\'' +
+                "| numeroJogadores=" + numeroJogadores +
+                "| online=" + online +
                 "--";
     }
 }

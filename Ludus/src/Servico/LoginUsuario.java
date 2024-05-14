@@ -22,9 +22,11 @@ public class LoginUsuario {
                 System.out.println("Digite sua senha: ");
                 String senha = input.nextLine();
 
-
-
                 for (Usuario usuario : RepositorioUsuario.listaUsuarios) {
+                    if (login.equals(usuario.getCPF()) && senha.equals(usuario.getSenha())){
+                        MainAdm.menuAdm(usuario);
+                        break;
+                    }
                     if (usuario.getCPF().equals(login) && usuario.getSenha().equals(senha)) {
                         System.out.println("Login efetuado com sucesso!");
                         Thread.sleep(2000);
@@ -37,7 +39,6 @@ public class LoginUsuario {
                 if (loginSuccess) {
                     MainLudus.menuDeJogos(u1);
 
-                    //Main.menuInicial();
                 } else {
                     Tratamentos.contaInvalida();
                     Main.menuInicial();
@@ -75,7 +76,7 @@ public class LoginUsuario {
                 RepositorioUsuario.addUsuario(usuario);
                 System.out.println("Usuário cadastrado com sucesso!");
                 Thread.sleep(2000);
-                Main.menuInicial();
+                MainLudus.menuDeJogos(usuario);
             }
         }catch (Exception e) {
             input.nextLine();

@@ -3,7 +3,7 @@ package Servico;
 import java.util.Scanner;
 import Entidade.Usuario;
 import GUI.Main;
-import GUI.MenuLudus;
+import GUI.MainLudus;
 import Repositorio.RepositorioUsuario;
 import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
@@ -40,7 +40,7 @@ public class RegistroUsuario {
             RepositorioUsuario.addUsuario(usuario);
             System.out.println("Usuário cadastrado com sucesso!");
             Thread.sleep(2000);
-            MenuLudus.menuLudus();
+            MainLudus.menuDeJogos(usuario);
         }
     }catch (Exception e) {
         input.nextLine();

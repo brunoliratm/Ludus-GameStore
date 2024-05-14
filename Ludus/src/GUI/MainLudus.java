@@ -25,12 +25,16 @@ public class MainLudus {
 
             while (loopPrincipal != 0) {
                 System.out.println("==== LUDUS GAME-STORE ====\n");
-                System.out.println("Bem-vindo(a) "+user.getNome()+"!");
+                System.out.print("Bem-vindo(a) "+user.getNome()+"!");
                 System.out.println("Data: " + LocalDate.now());
-                System.out.println("[1] - Buscar por genero\n" +
+                System.out.println("\nRecomendações para voçê");
+                repositorioProduto.recomendacoes();
+
+                System.out.println("\n[1] - Buscar por genero\n" +
                         "[2] - Buscar por nome\n" +
                         "[3] - Ver todos os jogos\n" +
-                        "[4] - Ver seus jogos");
+                        "[4] - Ver seus jogos\n"+
+                        "[5] - Sair");
                 escolhaInt = input.nextInt();
                 switch (escolhaInt) {
                     case 1:
@@ -82,13 +86,21 @@ public class MainLudus {
                         repositorioProduto.verTodosProdutos();
                         break;
                     case 4:
-                        System.out.println(user.toString());
+                        System.out.println(user);
+                        break;
+                    case 5:
+                        loopPrincipal=0;
+                        break;
                 }
             }
+            input.nextLine();
+            System.out.println();
+            input.close();
+            Main.menuInicial();
         }catch (Exception e){
             Tratamentos.opcaoInvalida();
         }
-        input.close();
+
 
     }
 

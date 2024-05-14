@@ -45,29 +45,20 @@ public class RepositorioProduto {
     }
 
     public boolean verProdutoPorGenero(String genero){
-
-        ArrayList<Produto> jogosFiltrados = new ArrayList<>();
-        for (int i=0; i<=repositorioJogos.size(); i++) {
-            if (repositorioJogos.get(i).getGenero().startsWith(genero) || repositorioJogos.get(i).getGenero().equalsIgnoreCase(genero)) {
-                jogosFiltrados.add(repositorioJogos.get(i));
+        for (Produto produto: repositorioJogos) {
+            if (produto.getGenero().startsWith(genero) || produto.getGenero().equalsIgnoreCase(genero) || produto.getGenero().endsWith(genero)) {
+                System.out.println(produto);
+                return true;
+            }else {
+                System.out.println("Não foi possivel encontrar jogo com esse genero "+ genero);
+                return false;
             }
         }
-        if (jogosFiltrados.isEmpty()) {
-            System.out.println("Nenhum jogo encontrado para o gênero " + genero);
-            return false;
-        } else {
-            System.out.println("Jogos do gênero " + genero + ":");
-            for (Produto jogo : jogosFiltrados) {
-                System.out.println(" - " + jogo.getNome());
-            }
-            return true;
-        }
+        return false;
     }
 
     public void verTodosProdutos(){
-        for (Produto jogo: repositorioJogos){
-            System.out.println("Jogo: "+jogo.getNome()+jogo.getAnoLancamento()+" genero: "+jogo.getGenero()+"\n"+"Plataforma: "+jogo.getPlataforma()+" Nº downloads: "+jogo.getNumeroJogadores()+" Online: "+jogo.isOnline());
-        }
+        System.out.println(repositorioJogos);
     }
 
     public void removerProduto(String nomeJogo){
@@ -84,7 +75,7 @@ public class RepositorioProduto {
     public Produto verProdutoPorNome(String nome){
 
         for (Produto jogo : repositorioJogos) {
-            if (jogo.getNome().equalsIgnoreCase(nome)) {
+            if (jogo.getNome().equalsIgnoreCase(nome) && jogo.getNome().startsWith(nome)) {
                 System.out.println(jogo);
                 return jogo;
             }

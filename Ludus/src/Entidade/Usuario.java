@@ -1,8 +1,11 @@
 package Entidade;
 
+import java.util.ArrayList;
+
 public class Usuario extends Pessoa {
     private String CPF;
-    private Produto meusJogos;
+    private Produto jogo;
+    private ArrayList<Produto> MeusJogos = new ArrayList<>();
 
     public Usuario(String CPF, String nome, String endereco, String telefone, String email, String idade, String senha) {
         super(nome, endereco, telefone, email, idade, senha);
@@ -17,18 +20,20 @@ public class Usuario extends Pessoa {
         this.CPF = CPF;
     }
 
-    public Produto getMeusJogos() {
-        return meusJogos;
+    public void setMeusJogos(Produto meusJogos) {
+        MeusJogos.add(meusJogos);
     }
 
-    public void setMeusJogos(Produto meusJogos) {
-        this.meusJogos = meusJogos;
+    public ArrayList<Produto> getMeusJogos() {
+        return MeusJogos;
     }
 
     @Override
     public String toString() {
         return "Usuario Sobre você:" +
-                "CPF='" + CPF + '\'' +
-                ", Meus Jogos=" + meusJogos ;
+                "CPF='" + CPF  +
+                ",\nMeus Jogos="  + getMeusJogos();
     }
+
+
 }
