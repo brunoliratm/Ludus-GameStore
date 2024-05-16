@@ -26,6 +26,24 @@ public class UsuarioServico {
                         System.out.println("Qual o CPF para fazer checkUp?");
                         String cpfCheck = input.nextLine();
                         RepositorioUsuario.checkUsuario(cpfCheck);
+                        break;
+                    case 2:
+                        System.out.println("Você vai adicionar novo usuário");
+                        RegistroUsuario.cadastrarUsuario();
+                        break;
+                    case 3:
+                        System.out.println("Todos usuários do sistema");
+                        RepositorioUsuario.mostrarUser();
+                        break;
+                    case 4:
+                        System.out.println("Excluindo conta");
+                        System.out.println("Qual CPF você quer excluir?");
+                        String cpfExcluir = input.nextLine();
+                        RepositorioUsuario.excluirUsuario(cpfExcluir);
+                        break;
+                    case 5:
+                        System.out.println("Voltando para o MenuADM...");
+                        loopUser=1;
                 }
             }
         }catch (Exception e ){

@@ -19,51 +19,26 @@ public class MainLudus {
         repositorioProduto.jogosAdicionados();
         String escolhaString;
         int escolhaInt;
-        int loopPrincipal =9;
-        try {
-
-
-            while (loopPrincipal != 0) {
+        int loop = 1;
+        while (loop == 1) {
+            try {
                 System.out.println("==== LUDUS GAME-STORE ====\n");
-                System.out.print("Bem-vindo(a) "+user.getNome()+"!");
-                System.out.println("Data: " + LocalDate.now());
-                System.out.println("\nRecomendações para voçê");
+                System.out.print("Bem-vindo(a) " + user.getNome() + "!\n");
+                System.out.println("Data: " + LocalDate.now()+'\n');
                 repositorioProduto.recomendacoes();
 
-                System.out.println("\n[1] - Buscar por genero\n" +
-                        "[2] - Buscar por nome\n" +
-                        "[3] - Ver todos os jogos\n" +
-                        "[4] - Ver seus jogos\n"+
-                        "[5] - Sair");
-                escolhaInt = input.nextInt();
+                System.out.println('\n'+"""
+                        [1] - Buscar jogos por nome
+                        [2] - Ver todos os jogos
+                        [3] - Ver seus jogos
+                        [4] - Retornar ao menu de Login
+                        [5] - Sair
+                        """);
+                System.out.print("--> ");
+                escolhaInt = Integer.parseInt(input.nextLine());
                 switch (escolhaInt) {
-                    case 1:
-                        System.out.println("Qual genero você busca?");
-                        escolhaString = input.nextLine();
-                        System.out.println();
-                        input.nextLine();
-                        System.out.println();
-                        if (repositorioProduto.verProdutoPorGenero(escolhaString) == true) {
-                            System.out.println("Deseja instalar algum jogo?");
-                            System.out.println("Se sim qual? Se não digite [1]");
-                            String baixarOuNao = input.nextLine();
-                            if (baixarOuNao.equalsIgnoreCase("1")) {
-                                break;
-                            } else {
-                                if (repositorioProduto.verProdutoPorNome(baixarOuNao) == null) {
-                                    System.out.println("Sentimos muito...");
-                                } else {
-                                    Download.baixarProdurto();
-                                    user.setMeusJogos(repositorioProduto.verProdutoPorNome(baixarOuNao));
-                                    System.out.println("Finalizado com sucesso");
-                                }
 
-                            }
-                        }
-                        break;
-                    case 2:
-                        input.nextLine();
-                        System.out.println();
+                    case 1:
                         System.out.println("Qual jogo você busca?");
                         escolhaString = input.nextLine();
                         if (repositorioProduto.verProdutoPorNome(escolhaString) == null) {
@@ -75,33 +50,35 @@ public class MainLudus {
                             if (sOrN.equalsIgnoreCase("s")) {
                                 Download.baixarProdurto();
                                 user.setMeusJogos(repositorioProduto.verProdutoPorNome(escolhaString));
-                                System.out.println("Finalizado com sucesso");
+                                System.out.println("Instalado com sucesso");
+                                Thread.sleep(1500);
+                                break;
                             } else if (sOrN.equalsIgnoreCase("n")) {
                                 break;
                             }
                         }
                         break;
-                    case 3:
+                    case 2:
                         System.out.println("Todos os jogos");
                         repositorioProduto.verTodosProdutos();
+                        Thread.sleep(4000);
+                        break;
+                    case 3:
+                        System.out.println(user);
+                        Thread.sleep(4000);
                         break;
                     case 4:
-                        System.out.println(user);
+                        Main.menuInicial();
                         break;
                     case 5:
-                        loopPrincipal=0;
-                        break;
+                        System.out.println("Saindo...");
+                        Thread.sleep(2000);
+                        System.exit(0);
                 }
+            } catch (Exception e) {
+                Tratamentos.contaInvalida();
             }
-            input.nextLine();
-            System.out.println();
-            input.close();
-            Main.menuInicial();
-        }catch (Exception e){
-            Tratamentos.opcaoInvalida();
         }
-
-
     }
 
 }

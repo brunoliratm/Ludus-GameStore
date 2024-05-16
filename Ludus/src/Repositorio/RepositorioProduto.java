@@ -32,29 +32,16 @@ public class RepositorioProduto {
         repositorioJogos.add(new Produto("Uncharted 2: Among Thieves", "Ação e Aventura", 2009, "PlayStation 3", 1, false));
     }
     public void recomendacoes(){
-        System.out.println("Recomendações para você");
+        System.out.println("Recomendações para você: ");
         int indice = (int) (Math.random() * repositorioJogos.size());
         Produto recomendacao = repositorioJogos.get(indice);
-        System.out.println(recomendacao);
+        System.out.print(recomendacao);
+        indice = (int) (Math.random() * repositorioJogos.size());
+        recomendacao = repositorioJogos.get(indice);
+        System.out.print(recomendacao);
         indice = (int) (Math.random() * repositorioJogos.size());
         recomendacao = repositorioJogos.get(indice);
         System.out.println(recomendacao);
-        indice = (int) (Math.random() * repositorioJogos.size());
-        recomendacao = repositorioJogos.get(indice);
-        System.out.println(recomendacao);
-    }
-
-    public boolean verProdutoPorGenero(String genero){
-        for (Produto produto: repositorioJogos) {
-            if (produto.getGenero().startsWith(genero) || produto.getGenero().equalsIgnoreCase(genero) || produto.getGenero().endsWith(genero)) {
-                System.out.println(produto);
-                return true;
-            }else {
-                System.out.println("Não foi possivel encontrar jogo com esse genero "+ genero);
-                return false;
-            }
-        }
-        return false;
     }
 
     public void verTodosProdutos(){

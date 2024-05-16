@@ -7,7 +7,7 @@ import Tratamento.Tratamentos;
 import Servico.*;
 
 public class Main {
-    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) throws InterruptedException {
         
         Limpeza.limpar();
@@ -53,35 +53,42 @@ public class Main {
     }
 
     public static void menuInicial() throws InterruptedException {
-        sc.reset();
-        try {
-            System.out.println("[1] Cadastrar Usuario");
-            System.out.println("[2] Logar");
-            System.out.println("[3] Sair\n");
 
-            RepositorioUsuario.cadastroADM();
-            int opcao = sc.nextInt();
-            Limpeza.limpar();
-            switch (opcao) {
-                case 1:
-                    LoginUsuario.cadastrarUsuario();
-                    break;
-                case 2:
-                    LoginUsuario.loginUsuario();
-                    break;
-                case 3:
-                    System.out.println("Saindo...");
-                    System.exit(0);
-                    break;
-                default:
-                    Tratamentos.opcaoInvalida();
-                    menuInicial();
-                    break;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Menu Inicial\n");
+            try {
+
+                sc.reset();
+                System.out.println("[1] Cadastrar Usuario");
+                System.out.println("[2] Logar");
+                System.out.println("[3] Sair\n");
+
+                RepositorioUsuario.cadastroADM();
+                int opcao = sc.nextInt();
+                Limpeza.limpar();
+                switch (opcao) {
+                    case 1 :
+                        RegistroUsuario.cadastrarUsuario();
+                        sc.close();
+                        break;
+                    case 2 :
+                        LoginUsuario.loginUsuario();
+                        sc.close();
+                        break;
+                    case 3:
+                        System.out.println("Saindo...");
+                        Thread.sleep(2000);
+                        System.exit(0);
+                        break;
+                    default :
+                        Tratamentos.opcaoInvalida();
+                        menuInicial();
+                }
+
+            } catch (Exception e) {
+                sc.close();
+                Tratamentos.valorInvalido();
+                menuInicial();
             }
-
-        } catch (Exception e) {
-            Tratamentos.valorInvalido();
-            menuInicial();
-        }
     }
 }

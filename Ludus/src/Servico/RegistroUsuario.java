@@ -37,10 +37,12 @@ public class RegistroUsuario {
 
             Usuario usuario = new Usuario(cpf, nome, endereco, telefone, email, idade, senha);
             Thread.sleep(1000);
-            RepositorioUsuario.addUsuario(usuario);
-            System.out.println("Usuário cadastrado com sucesso!");
-            Thread.sleep(2000);
-            MainLudus.menuDeJogos(usuario);
+            if (RepositorioUsuario.checkUsuario(cpf)==null) {
+                MainLudus.menuDeJogos(usuario);
+            }else {
+                System.out.println("Usuário já registrado no Ludus");
+                Main.menuInicial();
+            }
         }
     }catch (Exception e) {
         input.nextLine();
