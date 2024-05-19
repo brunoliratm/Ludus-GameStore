@@ -3,100 +3,49 @@ package Entidade;
 import java.util.ArrayList;
 
 public class Usuario extends Pessoa {
-    private String CPF;
-    private Produto jogo;
-    private ArrayList<Produto> MeusJogos = new ArrayList<>();
 
-    public Usuario(String CPF, String nome, String endereco, String telefone, String email, String idade, String senha) {
-        super(nome, endereco, telefone, email, idade, senha);
-        this.CPF = CPF;
+    private String telefone;
+    private String email;
+    private ArrayList<Produto> meusJogos = new ArrayList<>();
+
+    public Usuario(String nome, String senha, String cpf, String email, String telefone) {
+        super(nome, senha, cpf);
+        this.telefone = telefone;
+        this.email = email;
+
+
     }
 
-    public String getCPF() {
-        return CPF;
+
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
-    }
 
-    public void setMeusJogos(Produto meusJogos) {
-        MeusJogos.add(meusJogos);
+    public String getEmail() {
+        return email;
     }
 
     public ArrayList<Produto> getMeusJogos() {
-        return MeusJogos;
+        return meusJogos;
+    }
+
+    public void setMeusJogos(Produto jogo) {
+        meusJogos.add(jogo);
     }
 
     @Override
-    public String getNome() {
-        return super.getNome();
-    }
-
-    @Override
-    public void setNome(String nome) {
-        super.setNome(nome);
-    }
-
-    @Override
-    public String getEndereco() {
-        return super.getEndereco();
-    }
-
-    @Override
-    public void setEndereco(String endereco) {
-        super.setEndereco(endereco);
-    }
-
-    @Override
-    public String getTelefone() {
-        return super.getTelefone();
-    }
-
-    @Override
-    public void setTelefone(String telefone) {
-        super.setTelefone(telefone);
-    }
-
-    @Override
-    public String getEmail() {
-        return super.getEmail();
-    }
-
-    @Override
-    public void setEmail(String email) {
-        super.setEmail(email);
-    }
-
-    @Override
-    public String getIdade() {
-        return super.getIdade();
-    }
-
-    @Override
-    public void setIdade(String idade) {
-        super.setIdade(idade);
-    }
-
-    @Override
-    public String getSenha() {
-        return super.getSenha();
-    }
-
-    @Override
-    public void setSenha(String senha) {
-        super.setSenha(senha);
+    public String getCpf() {
+        return super.getCpf();
     }
 
     @Override
     public String toString() {
         return "Usuario Sobre você:" +
-                "CPF='" + CPF  +
+                "CPF='" + getCpf()  +
                 "  "+getNome()+
-                "\nEndereço: "+ getEndereco()+
                 "\nTelefone: "+ getTelefone()+
                 "\nEmail: "+getEmail()+
-                "\nIdade: "+getIdade()+
                 ",\nMeus Jogos="  + getMeusJogos();
 
 

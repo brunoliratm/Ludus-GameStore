@@ -3,23 +3,29 @@ package Repositorio;
 import Entidade.Produto;
 
 import java.util.ArrayList;
+import java.util.SortedMap;
 
 public class RepositorioProduto {
     static ArrayList<Produto> repositorioJogos = new ArrayList<>();
 
-    public void addJogo(Produto jogo){
-        repositorioJogos.add(jogo);
-    }
-    public static boolean baixar(String nome){
-        for (int i =0;i<=repositorioJogos.size();i++){
-            if (repositorioJogos.get(i).getNome.equals(nome)){
-                System.out.println("instalando");
-                return true;
+    public static void addJogo(String nome, String genero, int anoLancamento, String plataforma, int numeroJogadores, boolean online) {
+        boolean jogoJaPresente = false;
+        for (Produto produto : repositorioJogos) {
+            if (produto.getNome().equalsIgnoreCase(nome)) {
+                System.out.println("Jogo já está presente no Ludus");
+                jogoJaPresente = true;
+                break;
             }
         }
-        return false;
+
+        if (!jogoJaPresente) {
+            System.out.println("Adicionou");
+            repositorioJogos.add(new Produto(nome, genero, anoLancamento, plataforma, numeroJogadores, online));
+        }
     }
-    public void jogosAdicionados(){
+
+
+    public static void jogosAdicionados(){
         repositorioJogos.add(new Produto("Grand Theft Auto V", "Ação e Aventura", 2013, "PlayStation 3, PlayStation 4, Xbox 360, Xbox One, PC", 1, true));
         repositorioJogos.add(new Produto("Red Dead Redemption 2", "Ação e Aventura", 2018, "PlayStation 4, Xbox One, PC", 1, true));
         repositorioJogos.add(new Produto("The Witcher 3: Wild Hunt", "RPG", 2015, "PC, PlayStation 4, Xbox One, Nintendo Switch", 1, true));
@@ -44,22 +50,26 @@ public class RepositorioProduto {
         System.out.println(recomendacao);
     }
 
-    public void verTodosProdutos(){
+    public static void verTodosProdutos(){
         System.out.println(repositorioJogos);
     }
 
-    public void removerProduto(String nomeJogo){
+    public static void removerProduto(String nomeJogo){
+        boolean contemJogo=true;
         for (Produto produto : repositorioJogos) {
-            if (produto.getNome.equals(nomeJogo)){
+            if (produto.getNome().equals(nomeJogo)){
                 repositorioJogos.remove(produto);
                 System.out.println("Jogo "+ nomeJogo+" foi excluido");
-            }else{
-                System.out.println("Buscar na classe de tratamento");
+                contemJogo=false;
+                break;
             }
+        }
+        if (contemJogo){
+            System.out.println("Jogo não foi encontrado no Ludus");
         }
     }
 
-    public Produto verProdutoPorNome(String nome){
+    public static Produto verProdutoPorNome(String nome){
 
         for (Produto jogo : repositorioJogos) {
             if (jogo.getNome().equalsIgnoreCase(nome) && jogo.getNome().startsWith(nome)) {

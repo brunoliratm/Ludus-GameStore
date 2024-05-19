@@ -1,10 +1,13 @@
 package Servico;
 
 import java.util.Scanner;
+
+import DAO.UsuarioDAO;
 import Entidade.Usuario;
 import GUI.Main;
 import GUI.MainLudus;
-import Repositorio.RepositorioUsuario;
+import Repositorio.RepositorioProduto;
+import Repositorio.RepositorioPessoa;
 import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
 
@@ -12,6 +15,8 @@ public class RegistroUsuario {
   static Scanner input = new Scanner(System.in);
   
   public static void cadastrarUsuario() throws InterruptedException {
+      Limpeza.limpar();
+      RepositorioProduto.jogosAdicionados();
     System.out.println("Cadastro de Usuário\n");
     Limpeza.limpar();
     try {
@@ -30,14 +35,13 @@ public class RegistroUsuario {
             String email = input.nextLine();
             System.out.println("Digite seu telefone: ");
             String telefone = input.nextLine();
-            System.out.println("Digite seu endereço: ");
-            String endereco = input.nextLine();
-            System.out.println("Digite sua idade: ");
-            String idade = input.nextLine();
 
-            Usuario usuario = new Usuario(cpf, nome, endereco, telefone, email, idade, senha);
+
+            Usuario usuario = new Usuario(nome, senha,cpf, email, telefone );
+            UsuarioDAO.cadastrarUsuario(usuario);
             Thread.sleep(1000);
-            if (RepositorioUsuario.checkUsuario(cpf)==null) {
+            if (RepositorioPessoa.checkUsuario(cpf)==null) {
+                RepositorioPessoa.addUsuario(usuario);
                 MainLudus.menuDeJogos(usuario);
             }else {
                 System.out.println("Usuário já registrado no Ludus");

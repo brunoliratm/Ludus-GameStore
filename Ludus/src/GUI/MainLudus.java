@@ -5,6 +5,7 @@ import Entidade.Usuario;
 import Repositorio.RepositorioProduto;
 
 import Servico.Download;
+import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
 
 
@@ -16,11 +17,12 @@ public class MainLudus {
     public static void menuDeJogos(Usuario user) throws InterruptedException {
         RepositorioProduto repositorioProduto = new RepositorioProduto();
         Scanner input = new Scanner(System.in);
-        repositorioProduto.jogosAdicionados();
+
         String escolhaString;
         int escolhaInt;
         int loop = 1;
         while (loop == 1) {
+            Limpeza.limpar();
             try {
                 System.out.println("==== LUDUS GAME-STORE ====\n");
                 System.out.print("Bem-vindo(a) " + user.getNome() + "!\n");
@@ -71,6 +73,7 @@ public class MainLudus {
                         Main.menuInicial();
                         break;
                     case 5:
+
                         System.out.println("Saindo...");
                         Thread.sleep(2000);
                         System.exit(0);

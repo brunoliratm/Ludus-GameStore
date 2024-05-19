@@ -1,7 +1,9 @@
 
 package Servico;
+import Entidade.Adm;
 import Entidade.Usuario;
-import Repositorio.RepositorioUsuario;
+import Repositorio.RepositorioProduto;
+import Repositorio.RepositorioPessoa;
 import java.util.Scanner;
 import Tratamento.*;
 import GUI.*;
@@ -11,6 +13,9 @@ public class LoginUsuario {
     static Scanner input = new Scanner(System.in);
 
     public static void loginUsuario() throws InterruptedException {
+        Limpeza.limpar();
+        Usuario u1 = new Usuario("","","","","");
+        RepositorioProduto.jogosAdicionados();
         System.out.println("Login de Usuário\n");
         Limpeza.limpar();
 
@@ -22,25 +27,28 @@ public class LoginUsuario {
             System.out.println("Digite sua senha: ");
             String senha = input.nextLine();
 
-            for (Usuario usuario : RepositorioUsuario.listaADM) {
-                if (login.equals(usuario.getCPF()) && senha.equals(usuario.getSenha())){
-                    MainAdm.menuAdm(usuario);
+            for (Adm adm : RepositorioPessoa.listaADM) {
+                if (login.equals(adm.getCpf()) && senha.equals(adm.getSenha())){
+                    MainAdm.menuAdm(adm);
                     loginSuccess=true;
                     break;
                 }
             }
-            for (Usuario usario: RepositorioUsuario.listaUsuarios) {
-                if (login.equals(usario.getCPF())&& senha.equals(usario.getSenha())){
+            for (Usuario usario: RepositorioPessoa.listaUsuarios) {
+                if (login.equals(usario.getCpf())&& senha.equals(usario.getSenha())){
                     MainLudus.menuDeJogos(usario);
+                    u1=usario;
                     loginSuccess=true;
                     break;
                 }
+
+            }
+
             if(loginSuccess){
-                MainLudus.menuDeJogos(usario);
-            }else {
+                MainLudus.menuDeJogos(u1);
+            }else if(!loginSuccess) {
                 Tratamentos.contaInvalida();
                 Main.menuInicial();
-            }
             }
         } while (!loginSuccess);
 

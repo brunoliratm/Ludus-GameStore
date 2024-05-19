@@ -2,6 +2,10 @@
 package Tratamento;
 
 public class Tratamentos {
+    public static void erroConexao()throws InterruptedException{
+        System.out.println("Erro ao conectar com o banco de dados");
+        Thread.sleep(2000);
+    }
     public static void contaInvalida() throws InterruptedException {
         System.out.println("Login ou senha incorretos! tente novamente.");
         Thread.sleep(2000);

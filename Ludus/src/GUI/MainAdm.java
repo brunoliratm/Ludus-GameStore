@@ -1,20 +1,24 @@
 package GUI;
 
-import Entidade.Usuario;
+import Entidade.Adm;
+import Servico.ProdutoServico;
 import Servico.UsuarioServico;
+import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
 
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class MainAdm {
-    public static void menuAdm(Usuario ADM) throws InterruptedException {
+    public static void menuAdm(Adm ADM) throws InterruptedException {
+
         Scanner input = new Scanner(System.in);
         int loop = 0;
         while (loop == 0) {
+            Limpeza.limpar();
             System.out.println("Menu ADM");
             System.out.println("==== LUDUS GAME-STORE ====\n");
-            System.out.print("Bem-vindo(a) " + ADM.getNome() + "!");
+            System.out.print("Bem-vindo(a) " + ADM.getNome() + "!  ");
             System.out.println("Data: " + LocalDate.now());
 
             try {
@@ -24,9 +28,11 @@ public class MainAdm {
                 System.out.println("O que Você quer fazer?");
                 int escolha =input.nextInt();
                 switch (escolha){
-                    case 1:break;
+                    case 1:
+                        ProdutoServico.menuProduto(input);
+                        break;
                     case 2:
-                        UsuarioServico.menuUsuario();
+                        UsuarioServico.menuUsuario(input);
                         break;
                     case 3:
                         loop=1;
