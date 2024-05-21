@@ -1,6 +1,7 @@
 package GUI;
 
 import Entidade.Adm;
+
 import Servico.ProdutoServico;
 import Servico.UsuarioServico;
 import Tratamento.Limpeza;
@@ -24,7 +25,8 @@ public class MainAdm {
             try {
                 System.out.println("[1] - Menu dos jogos\n" +
                         "[2] - Menu dos usuários\n" +
-                        "[3] - Sair\n");
+                        "[3] - Sobre você\n" +
+                        "[4] - Sair\n");
                 System.out.println("O que Você quer fazer?");
                 int escolha =input.nextInt();
                 switch (escolha){
@@ -35,6 +37,10 @@ public class MainAdm {
                         UsuarioServico.menuUsuario(input);
                         break;
                     case 3:
+                        System.out.println(ADM);
+                        Thread.sleep(3000);
+                        break;
+                    case 4:
                         loop=1;
                         break;
                 }

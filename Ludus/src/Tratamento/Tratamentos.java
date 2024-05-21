@@ -17,7 +17,7 @@ public class Tratamentos {
     }
 
     public static void valorInvalido() throws InterruptedException {
-        System.out.println("Valor inserido inválido! insira apenaas o que é pedido.");
+        System.out.println("Valor inserido inválido! insira apenas o que é pedido.");
         Thread.sleep(2000);
     }
 

@@ -3,7 +3,7 @@ package Servico;
 import Entidade.Adm;
 import Entidade.Usuario;
 import Repositorio.RepositorioProduto;
-import Repositorio.RepositorioPessoa;
+import Repositorio.RepositorioUsuario;
 import java.util.Scanner;
 import Tratamento.*;
 import GUI.*;
@@ -27,26 +27,32 @@ public class LoginUsuario {
             System.out.println("Digite sua senha: ");
             String senha = input.nextLine();
 
-            for (Adm adm : RepositorioPessoa.listaADM) {
-                if (login.equals(adm.getCpf()) && senha.equals(adm.getSenha())){
-                    MainAdm.menuAdm(adm);
-                    loginSuccess=true;
-                    break;
-                }
+//            for (Adm adm : RepositorioUsuario.listaADM) {
+//                if (login.equals(adm.getCpf()) && senha.equals(adm.getSenha())){
+//                    MainAdm.menuAdm(adm);
+//                    loginSuccess=true;
+//                    break;
+//                }
+//            }
+//            for (Usuario usario: RepositorioUsuario.listaUsuarios) {
+//                if (login.equals(usario.getCpf())&& senha.equals(usario.getSenha())){
+//                    MainLudus.menuDeJogos(usario);
+//                    u1=usario;
+//                    loginSuccess=true;
+//                    break;
+//                }
+//
+//            }
+            /////////Encontrar e retornar o usuario para entrar na conta
+            if (UsuarioServico.verificacaoNoSistema(login, senha) != null){
+                MainLudus.menuDeJogos(UsuarioServico.verificacaoNoSistema(login, senha));
+                loginSuccess=true;
+            } else if (AdmServico.verificacaoNoSistema(login, senha)!=null) {
+                MainAdm.menuAdm(AdmServico.verificacaoNoSistema(login, senha));
+                loginSuccess=true;
             }
-            for (Usuario usario: RepositorioPessoa.listaUsuarios) {
-                if (login.equals(usario.getCpf())&& senha.equals(usario.getSenha())){
-                    MainLudus.menuDeJogos(usario);
-                    u1=usario;
-                    loginSuccess=true;
-                    break;
-                }
 
-            }
-
-            if(loginSuccess){
-                MainLudus.menuDeJogos(u1);
-            }else if(!loginSuccess) {
+            if(!loginSuccess) {
                 Tratamentos.contaInvalida();
                 Main.menuInicial();
             }

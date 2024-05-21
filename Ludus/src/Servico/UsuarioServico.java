@@ -1,6 +1,7 @@
 package Servico;
 
-import Repositorio.RepositorioPessoa;
+import Entidade.Usuario;
+import Repositorio.RepositorioUsuario;
 import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
 
@@ -27,7 +28,7 @@ public class UsuarioServico {
                         System.out.println();
                         System.out.println("Qual o CPF para fazer checkUp?");
                         String cpfCheck = input.nextLine();
-                        RepositorioPessoa.checkUsuario(cpfCheck);
+                        RepositorioUsuario.checkUsuario(cpfCheck, true);
                         Thread.sleep(3500);
                         break;
                     case 2:
@@ -36,14 +37,14 @@ public class UsuarioServico {
                         break;
                     case 3:
                         System.out.println("Todos usuários do sistema");
-                        RepositorioPessoa.mostrarUser();
+                        RepositorioUsuario.mostrarUser();
                         Thread.sleep(3000);
                         break;
                     case 4:
                         System.out.println("Excluindo conta");
                         System.out.println("Qual CPF você quer excluir?");
                         String cpfExcluir = input.nextLine();
-                        RepositorioPessoa.excluirUsuario(cpfExcluir);
+                        RepositorioUsuario.excluirUsuario(cpfExcluir);
                         Thread.sleep(1500);
                         break;
                     case 5:
@@ -58,5 +59,12 @@ public class UsuarioServico {
         }catch (Exception e ){
             Tratamentos.opcaoInvalida();
         }
+    }
+    public static boolean verificacaoNoSistema(String cpf){
+        return RepositorioUsuario.checkUp(cpf);
+
+    }
+    public static Usuario verificacaoNoSistema(String cpf, String senha){
+        return RepositorioUsuario.entrandoNoSistema(cpf, senha);
     }
 }

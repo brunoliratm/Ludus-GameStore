@@ -1,7 +1,8 @@
 package GUI;
 import java.util.Scanner;
 
-import Repositorio.RepositorioPessoa;
+import Repositorio.RepositorioAdm;
+import Repositorio.RepositorioUsuario;
 import Tratamento.Limpeza;
 import Tratamento.Tratamentos;
 import Servico.*;
@@ -63,7 +64,7 @@ public class Main {
                 System.out.println("[2] Logar");
                 System.out.println("[3] Sair\n");
 
-                RepositorioPessoa.cadastroADM();
+                RepositorioAdm.cadastroADM();
                 int opcao = sc.nextInt();
                 Limpeza.limpar();
                 switch (opcao) {
