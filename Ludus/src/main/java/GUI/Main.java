@@ -1,3 +1,7 @@
+// *   Faculdade: UNIFACOL
+// *   Periodo: 3
+// *   Alunos: Bruno Magno e Paulo de Araujo
+
 package GUI;
 
 import java.util.Scanner;
