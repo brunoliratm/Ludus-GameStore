@@ -91,13 +91,13 @@ public class Main {
     }
 
     public static void menuInicial() throws InterruptedException {
-        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
         Limpeza.limpar();
         System.out.println("Menu Inicial\n");
         System.out.println("[1] Cadastrar Usuario");
         System.out.println("[2] Logar");
-        System.out.println("[3] Sair\n");
+        System.out.println("[3] Menu da administracao");
+        System.out.println("[4] Sair\n");
         System.out.print("--> ");
 
         String opcao = sc.nextLine();
@@ -110,7 +110,7 @@ public class Main {
                 LoginUsuario.loginUsuario();
                 break;
             case "3":
-                MenuAdm.menuAdm();
+                loginAdm();
                 break;
             case "4":
                 System.out.println("Obrigado pela confianca, volte sempre!");
@@ -125,4 +125,26 @@ public class Main {
         }
 
     }
+    public static void loginAdm() throws InterruptedException {
+        Scanner sc = new Scanner(System.in);
+        Limpeza.limpar();
+        System.out.println("Entrar como ADM\n");
+        System.out.print("login: ");
+        String login = sc.nextLine();
+        System.out.print("Senha: ");
+        String senha = sc.nextLine();
+        Limpeza.limpar();
+
+        if(login.equals("admin") && senha.equals("admin")){
+            System.out.println("Entrando como ADM...\n");
+            Thread.sleep(2000);
+            MenuAdm.menuAdm();
+        } else{
+            Tratamentos.opcaoInvalida();
+            menuInicial();
+        }
+
+    }
 }
+
+
