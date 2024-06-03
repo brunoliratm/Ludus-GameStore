@@ -38,9 +38,8 @@ public class MenuLudus {
             for (Jogos jogo : recomendacoes) {
                 System.out.println(jogo.getNome() + " - R$ " + String.format("%.2f", jogo.getPreco()));
             }
-        } finally {
-            em.close();
-            emf.close();
+        } catch (Exception e){
+            //prossegue sem as recomendacoes
         }
 
         try {
@@ -52,6 +51,8 @@ public class MenuLudus {
             for (Jogos jogo : novidades) {
                 System.out.print(jogo.getNome() + " | ");
             }
+        } catch (Exception e){
+            //prossegue sem as novidades
         } finally {
             em.close();
             emf.close();

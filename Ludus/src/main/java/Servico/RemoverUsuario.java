@@ -28,7 +28,6 @@ public class RemoverUsuario {
       }
     } catch (Exception e) {
       System.out.println("Erro ao remover usuário.");
-      e.printStackTrace();
     }
     em.close();
     emf.close();

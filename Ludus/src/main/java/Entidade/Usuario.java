@@ -30,7 +30,7 @@ public class Usuario extends Pessoa {
     }
 
     public String getCpf() {
-        return super.getCpf();
+        return cpf;
     }
 
     public void setCpf(String cpf) {

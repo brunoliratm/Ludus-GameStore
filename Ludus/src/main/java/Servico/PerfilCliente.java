@@ -20,7 +20,7 @@ public class PerfilCliente {
     try {
       System.out.println("\n=== Seu Perfil ===");
       System.out.println(usuario);
-      List<Compra> compras = em.createQuery("SELECT c FROM Compra c WHERE c.usuario.cpf = :cpf", Compra.class)
+      List<Compra> compras = em.createQuery("SELECT c FROM compra c WHERE c.usuario.cpf = :cpf", Compra.class)
           .setParameter("cpf", usuario.getCpf())
           .getResultList();
 
