@@ -83,6 +83,6 @@ public class Jogos {
 
     @Override
     public String toString() {
-        return "ID" +id+ "Nome:" + nome + "\ngenero: " + genero + "\nAno Lancamento:" + anoLancamento + "\nPlataforma:" + plataforma + "\nPreco=" + preco + "\n";
+        return "ID:" +id+ "\nNome:" + nome + "\ngenero: " + genero + "\nAno Lancamento:" + anoLancamento + "\nPlataforma:" + plataforma + "\nPreco=" + preco + "\n";
     }
 }
