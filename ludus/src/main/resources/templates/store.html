@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ludus - Sua loja de jogos com os melhores preços.">
+    <title>Ludus - Sua Loja de Jogos</title>
+    <style>
+        /* Paleta de Cores Inspirada nos Serviços do Google */
+        :root {
+            --primary-light: #1A73E8;
+            --secondary-light: #34A853;
+            --background-light: #FFFFFF;
+            --surface-light: #F5F5F5;
+            --on-primary-light: #FFFFFF;
+            --on-secondary-light: #FFFFFF;
+            --on-background-light: #000000;
+            --on-surface-light: #000000;
+
+            /* Cores para o Modo Escuro */
+            --primary-dark: #8AB4F8;
+            --secondary-dark: #81C995;
+            --background-dark: #202124;
+            --surface-dark: #303134;
+            --on-primary-dark: #000000;
+            --on-secondary-dark: #000000;
+            --on-background-dark: #E8EAED;
+            --on-surface-dark: #E8EAED;
+        }
+
+        /* Estilos gerais */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-light);
+            color: var(--on-background-light);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header {
+            background-color: var(--primary-light);
+            color: var(--on-primary-light);
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav a {
+            color: var(--on-primary-light);
+            margin-left: 1em;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .banner {
+            background-image: url('https://example.com/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--on-primary-light);
+        }
+
+        .banner h2 {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            border-radius: 10px;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1em;
+        }
+
+        .game-card {
+            background-color: var(--surface-light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, background-color 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .game-card .info {
+            padding: 1em;
+        }
+
+        .game-card h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .game-card .price {
+            color: var(--primary-light);
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 0.5em;
+        }
+
+        footer {
+            background-color: var(--primary-light);
+            color: var(--on-primary-light);
+            padding: 1em;
+            text-align: center;
+        }
+
+        /* Estilos do Modo Escuro */
+        body.dark-mode {
+            background-color: var(--background-dark);
+            color: var(--on-background-dark);
+        }
+
+        header.dark-mode {
+            background-color: var(--primary-dark);
+            color: var(--on-primary-dark);
+        }
+
+        nav a.dark-mode {
+            color: var(--on-primary-dark);
+        }
+
+        .banner.dark-mode h2 {
+            color: var(--on-primary-dark);
+        }
+
+        .game-card.dark-mode {
+            background-color: var(--surface-dark);
+            color: var(--on-surface-dark);
+        }
+
+        .game-card.dark-mode .price {
+            color: var(--primary-dark);
+        }
+
+        footer.dark-mode {
+            background-color: var(--primary-dark);
+            color: var(--on-primary-dark);
+        }
+
+        /* Botão de Alternância de Modo */
+        .toggle-dark-mode {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: var(--secondary-light);
+            color: var(--on-secondary-light);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-dark-mode:hover {
+            background-color: var(--secondary-dark);
+        }
+
+        .dark-mode .toggle-dark-mode {
+            background-color: var(--secondary-dark);
+            color: var(--on-secondary-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header id="header">
+        <h1>Ludus</h1>
+        <nav>
+            <a href="#store">Loja</a>
+            <a href="#about">Sobre</a>
+            <a href="#contact">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h2>Encontre os melhores jogos pelo menor preço!</h2>
+    </section>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <h2>Destaques de Jogos Baratos</h2>
+        <div class="game-grid">
+            <!-- Exemplo de Card de Jogo -->
+            <div class="game-card">
+                <img src="https://example.com/game1.jpg" alt="Jogo 1">
+                <div class="info">
+                    <h3>Jogo Ação Incrível</h3>
+                    <p class="price">R$ 19,99</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://example.com/game2.jpg" alt="Jogo 2">
+                <div class="info">
+                    <h3>RPG Fantasia</h3>
+                    <p class="price">R$ 29,99</p>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="https://example.com/game3.jpg" alt="Jogo 3">
+                <div class="info">
+                    <h3>Estratégia Futurista</h3>
+                    <p class="price">R$ 15,99</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="footer">
+        <p>&copy; 2024 Ludus - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão de alternância de modo escuro -->
+    <button class="toggle-dark-mode" id="toggle-dark-mode" onclick="toggleDarkMode()">🌙</button>
+
+    <script>
+        // Função para alternar entre modo claro e escuro
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.getElementById('header').classList.toggle('dark-mode');
+            document.querySelectorAll('.game-card').forEach(card => {
+                card.classList.toggle('dark-mode');
+            });
+            document.getElementById('footer').classList.toggle('dark-mode');
+            document.getElementById('toggle-dark-mode').classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>
