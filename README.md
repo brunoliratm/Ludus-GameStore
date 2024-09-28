@@ -61,6 +61,9 @@ java -jar .\target\ludus-0.0.1-SNAPSHOT.jar
 4. Acess `http://localhost:8080/` and enjoy
 </strong>
 
+> [!NOTE]
+> remember to change/adapt project and database properties to your needs
+
 </br>
 
 ## :zombie:Credits
