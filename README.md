@@ -34,14 +34,31 @@
 ## :open_file_folder:Get Started
 
 <strong>
-<p>To get started with Ludus, follow these simple steps:</p>
+ <h3>To get started with Ludus, follow these simple steps:</h3>
 
+<details>
+  <summary>Dependecies</summary>
+ 
+   - Jdk 22 or above
+   - Apache Maven
+</details>
+
+</br>
 
 1. Clone this repository to your local machine.
 ```shell
-   git clone https://github.com/brunoliratm/Ludus-GameStore.git
+git clone https://github.com/brunoliratm/Ludus-GameStore.git
+cd .\Ludus-GameStore
 ```
-2. Launch the application and start exploring the world of gaming.
+2. Copile project
+```java
+mvn clean install
+```
+3. Execute the jar
+```
+java -jar .\target\ludus-0.0.1-SNAPSHOT.jar
+```
+4. Acess `http://localhost:8080/` and enjoy
 </strong>
 
 </br>
