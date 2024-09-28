@@ -39,7 +39,7 @@
 <details>
   <summary>Dependecies</summary>
  
-   - Jdk 22 or above
+   - Java 22 or above
    - Apache Maven
 </details>
 
