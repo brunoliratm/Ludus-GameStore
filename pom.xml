@@ -11,7 +11,7 @@
 	<groupId>com.ludus</groupId>
 	<artifactId>ludus</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>ludus</name>
 	<description>GameStore ludus for Spring</description>
 	<url/>
@@ -86,6 +86,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<mainClass>com.ludus.LudusApplication</mainClass>
+
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
